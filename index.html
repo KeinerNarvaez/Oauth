@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- ! font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ! css file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h3>login</h3>
+        <form action="">
+            <div class="loginCircle">
+                <!-- Redirigir a la autenticación de Google -->
+                <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=403915626547-k4qm0uen3u3p8iu4kh77n1b3oidpm9hi.apps.googleusercontent.com&scope=openid%20profile%20email&state=Nc1KaNjpRjis-Vwjawe40hY9lD4h0kSy2omuOCa2Gx8%3D&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2Flogin%2Foauth2%2Fcode%2Fgoogle&nonce=szZaV40ZgZerLNHU5Pr4RGmdYLFPzBlgCtzggo1XToQ&service=lso&o2v=2&ddm=1&flowName=GeneralOAuthFlow">
+                    <i class="fa-brands fa-google"></i>
+                </a>
+                <!-- Redirigir a la autenticación de GitHub -->
+                <a href="https://github.com/login?client_id=Ov23liriYFI6O2zfJt5W&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3DOv23liriYFI6O2zfJt5W%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8085%252Flogin%252Foauth2%252Fcode%252Fgithub%26response_type%3Dcode%26scope%3Dread%253Auser%26state%3DqW4u6BetASTWMHdd8O1tH1uAmUTv8qYZdROl_D_y7vM%253D">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
