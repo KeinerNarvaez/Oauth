@@ -71,7 +71,7 @@
         <!-- Sidebar a la izquierda -->
         <div class="d-flex flex-column sidebar-dark">
           <a href="/" class="d-flex align-items-center mb-3 text-white text-decoration-none">
-            <img src="images/b650f9cb-a484-424a-984d-117c6dd42023.webp" style="width:30%; border-radius: 30px;  max-width: 40%;background: #ffffff;">
+            <img src="https://i.pinimg.com/736x/37/e2/fe/37e2fe3a474445f25953ca2394d0ff73.jpg" style="width:30%; border-radius: 30px;  max-width: 40%;background: #ffffff;">
             <span class="fs-4" style="margin-left: 9px;">Panel de administración</span>
           </a>
           <hr class="border-secondary">
@@ -89,8 +89,7 @@
               <strong id="per">Keiner</strong>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-              <li><a class="dropdown-item" href="customizer.html">Perfil</a></li>
-              <li><hr class="dropdown-divider"></li>
+
               <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar sesión</a></li>
             </ul>
           </div>
@@ -99,18 +98,19 @@
         <!-- Contenido user -->
  
         <div class="content d-flex justify-content-center align-items-center">
-            <div class="card bg-dark text-white p-4 shadow rounded-4" id="user" style="max-width: 800px; width: 100%;">      
+            <div class="card bg-dark text-white p-4 shadow rounded-4" id="user" style="max-width: 1000px; width: 100%;">      
               <h5 class="text-center mb-3">Registros actuales</h5>
-              <div id="userList" class="table-responsive">
+              <div class="table-responsive">
                 <table class="table table-dark table-hover table-bordered align-middle">
                   <thead class="table-secondary text-dark">
                     <tr>
                       <th>Nombre</th>
-                      <th>Teléfono</th>
                       <th>Correo</th>
+                      <th>Fecha de registro</th>
+                      <th>Opciones</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody  id="userList">
                     <!-- Aquíse agregan los registros dinámicamente con JavaScript -->
                   </tbody>
                 </table>
@@ -118,5 +118,6 @@
             </div>
           </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

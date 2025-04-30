@@ -11,23 +11,25 @@ import org.springframework.security.web.SecurityFilterChain;
 import com.example.Auth2.service.customOauth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
+    @Autowired
+    private OAuth2LoginSuccessHandler oAuth2LoginSuccessHandler;
     @Autowired
     private customOauth2UserService customOAuth2UserService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-
         return httpSecurity
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authRequest -> authRequest
                 .requestMatchers("/api/v1/user/").permitAll()
+                .requestMatchers("/api/v1/user/**").permitAll()
                 .requestMatchers("/hello").permitAll()
                 .requestMatchers("/oauth2/authorization/**").permitAll()
-                .requestMatchers("/login/oauth2/code/**").permitAll()
+                .requestMatchers("/login/oauth2/code/**").permitAll()           
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session
@@ -42,4 +44,5 @@ public class SecurityConfig {
             .build();
     }
 }
+
 

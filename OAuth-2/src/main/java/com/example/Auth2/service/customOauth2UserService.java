@@ -33,8 +33,8 @@ public class customOauth2UserService extends DefaultOAuth2UserService {
             email = (String) attributes.get("email");
             name = (String) attributes.get("name");
         } else if ("GitHub".equalsIgnoreCase(clientName)) {
-            email = (String) attributes.get("email");
-            name = (String) attributes.get("login");
+            email = (String) attributes.get("login");
+            name = (String) attributes.get("name");
         } else if ("Facebook".equalsIgnoreCase(clientName)) {
             email = (String) attributes.get("email");
             name = (String) attributes.get("name");
