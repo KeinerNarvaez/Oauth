@@ -23,6 +23,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
+         // Desactiva CSRF (Cross-Site Request Forgery) porque estamos usando tokens (por ejemplo, JWT)
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authRequest -> authRequest
                 .requestMatchers("/api/v1/user/").permitAll()

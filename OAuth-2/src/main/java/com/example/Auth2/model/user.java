@@ -29,14 +29,10 @@ public class user {
    @Column(name = "registration_date", nullable = false)
    private LocalDateTime registration_date;
 
-   @Column(name="status",nullable =false, columnDefinition = "boolean default true ")
+   @Column(name="status",nullable =false)
    private boolean status;
-
-   
-   
    public user() {
    }
-
    public user(int id_user, String name, String email,LocalDateTime registration_date, boolean status) {
       this.id_user = id_user;
       this.name = name;

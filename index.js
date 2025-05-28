@@ -58,12 +58,12 @@ function eliminarUsuario(id) {
         return;
       }
       alert("Usuario eliminado con éxito");
-      adminUser(); // Actualizar la lista de usuarios después de eliminar
+      adminUser(); 
     })
     .catch(error => {
       alert("Error al eliminar el usuario:", error);
     });
-    adminUser(); // Actualizar la lista de usuarios después de eliminar
+    adminUser(); 
 }     
 document.addEventListener("DOMContentLoaded", function() {
     adminUser();

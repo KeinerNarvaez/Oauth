@@ -23,7 +23,7 @@ public class customOauth2UserService extends DefaultOAuth2UserService {
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(userRequest);
 
-        String clientName = userRequest.getClientRegistration().getClientName(); // "Google", "GitHub", "Facebook"
+        String clientName = userRequest.getClientRegistration().getClientName(); 
         Map<String, Object> attributes = oAuth2User.getAttributes();
 
         String email = null;
@@ -42,17 +42,16 @@ public class customOauth2UserService extends DefaultOAuth2UserService {
         System.out.println("Client Name: " + clientName);
         System.out.println("Email: " + email);
         System.out.println("Name: " + name);
-        // Validar que el email no sea nulo ni vacío
         if (email != null && !email.isEmpty()) {
             boolean userExists = !userService.getListUserForName(email).isEmpty();
 
             if (!userExists) {
                 userDTO newUser = new userDTO(
-                    0,                                        // id_user = 0 (lo asignará la base de datos)
-                    Objects.requireNonNullElse(name, "Unknown"), // nombre o "Unknown" si no viene
-                    email,                                    // email
-                    LocalDateTime.now(),                      // fecha de registro actual
-                    true                                      // status activo
+                    0,                                      
+                    Objects.requireNonNullElse(name, "Unknown"), 
+                    email,                               
+                    LocalDateTime.now(),                
+                    true                                     
                 );
 
                 userService.save(newUser);
