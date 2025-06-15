@@ -108,13 +108,18 @@ form a {
 
 .fa-github {
     color: #6e5494;
-    left: 166px;
-    top: 106px;
+    left: 120px;
+    top: 109px;
 }
 .fa-google {
     color: #DB4437;
-    left: 81px;
-    top: 106px;
+    left: 15px;
+    top: 52px;
+}
+.fa-facebook {
+    color: #013ca9;
+    left: 230px;
+    top: 50px;
 }
 
 

@@ -1,7 +1,12 @@
 package com.example.Auth2.model;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collections;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +15,7 @@ import jakarta.persistence.Id;
 
 @Entity(name = "user")
 
-public class user {
+public class user implements UserDetails {
    /*
     * atributos o columnas de la entidad
     */
@@ -20,7 +25,9 @@ public class user {
    private int id_user;
 
    @Column(name = "name", length = 50, nullable = false)
-   private String name;
+   private String username;
+   @Column(name = "password", length = 150, nullable = false)
+   private String password;
 
    @Column(name = "email", length = 150, nullable = false)
    private String email;
@@ -33,39 +40,45 @@ public class user {
    private boolean status;
    public user() {
    }
-   public user(int id_user, String name, String email,LocalDateTime registration_date, boolean status) {
+   public user(int id_user, String username,String password, String email,LocalDateTime registration_date, boolean status) {
       this.id_user = id_user;
-      this.name = name;
+      this.username = username;
+      this.password = password;
       this.email = email;
       this.registration_date = registration_date;
       this.status = status;
    }
 
-   // get del ID
+
    public int getId_user() {
       return id_user;
    }
 
-   // set del ID
+
    public void setId_user(int id_user) {
       this.id_user = id_user;
    }
 
-   // get del firstName
-   public String get_name() {
-      return name;
+   public String getUsername() {
+      return username;
    }
 
-   // set del firstName
-   public void set_breedName(String name) {
-      this.name = name;
+
+   public void setUsername(String username) {
+      this.username = username;
+   }
+   public String getPassword() {
+      return password;
+   }
+   public void setPassword(String password) {
+      this.password = password;
    }
 
    public LocalDateTime get_registration_date() {
       return registration_date;
    }
 
-   // set del phone
+
    public void set_registration_date(LocalDateTime registration_date) {
       this.registration_date = registration_date;
    }
@@ -86,5 +99,10 @@ public class user {
       this.status = status;
    }
 
-   
+   @Override
+   public Collection<? extends GrantedAuthority> getAuthorities() {
+      return Collections.emptyList();
+   }
+
+
 }

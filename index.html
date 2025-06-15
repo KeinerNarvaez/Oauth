@@ -16,13 +16,19 @@
         <h3>login</h3>
         <form action="">
             <div class="loginCircle">
-                <!-- Redirigir a la autenticación de Google -->
-                <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=403915626547-k4qm0uen3u3p8iu4kh77n1b3oidpm9hi.apps.googleusercontent.com&scope=openid%20profile%20email&state=Nc1KaNjpRjis-Vwjawe40hY9lD4h0kSy2omuOCa2Gx8%3D&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2Flogin%2Foauth2%2Fcode%2Fgoogle&nonce=szZaV40ZgZerLNHU5Pr4RGmdYLFPzBlgCtzggo1XToQ&service=lso&o2v=2&ddm=1&flowName=GeneralOAuthFlow">
+                <!-- Google -->
+                <a href="http://localhost:8085/oauth2/authorization/google">
                     <i class="fa-brands fa-google"></i>
                 </a>
-                <!-- Redirigir a la autenticación de GitHub -->
-                <a href="/oauth2/authorization/google">
+
+                <!-- GitHub -->
+                <a href="http://localhost:8085/oauth2/authorization/github">
                     <i class="fa-brands fa-github"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="http://localhost:8085/oauth2/authorization/facebook">
+                    <i class="fa-brands fa-facebook"></i>
                 </a>
             </div>
         </form>

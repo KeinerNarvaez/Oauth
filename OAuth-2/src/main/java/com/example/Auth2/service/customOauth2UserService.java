@@ -1,6 +1,5 @@
 package com.example.Auth2.service;
 
-import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Objects;
 
@@ -11,13 +10,18 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import com.example.Auth2.DTO.userDTO;
+
+import com.example.Auth2.DTO.RequestRegisterUserDTO;
+
+
 
 @Service
 public class customOauth2UserService extends DefaultOAuth2UserService {
 
     @Autowired
     private userService userService;
+
+    
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -43,21 +47,17 @@ public class customOauth2UserService extends DefaultOAuth2UserService {
         System.out.println("Email: " + email);
         System.out.println("Name: " + name);
         if (email != null && !email.isEmpty()) {
-            boolean userExists = !userService.getListUserForName(email).isEmpty();
+            boolean userExists = !userService.getUserByEmail(email).isEmpty();
 
             if (!userExists) {
-                userDTO newUser = new userDTO(
-                    0,                                      
-                    Objects.requireNonNullElse(name, "Unknown"), 
-                    email,                               
-                    LocalDateTime.now(),                
-                    true                                     
-                );
+                RequestRegisterUserDTO newUser = new RequestRegisterUserDTO();
+                newUser.setUsername(Objects.requireNonNullElse(name, "Unknown"));
+                newUser.setPassword("password");
+                newUser.setEmail(email);
 
                 userService.save(newUser);
             }
         }
-
         return oAuth2User;
     }
 }

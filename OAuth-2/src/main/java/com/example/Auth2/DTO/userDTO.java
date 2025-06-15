@@ -6,8 +6,8 @@ public class userDTO {
 
    private int id_user;
 
-   private String name;
-
+   private String username;
+   private String password;
 
    private String email;
 
@@ -15,9 +15,10 @@ public class userDTO {
    private LocalDateTime registration_date;
 
    private boolean status;
-   public userDTO(int id_user, String name, String email,LocalDateTime registration_date, boolean status) {
+   public userDTO(int id_user, String username, String password, String email,LocalDateTime registration_date, boolean status) {
       this.id_user = id_user;
-      this.name = name;
+      this.username = username;
+      this.password = password;
       this.email = email;
       this.registration_date = registration_date;
       this.status = status;
@@ -34,13 +35,19 @@ public class userDTO {
    }
 
    // get del firstName
-   public String get_name() {
-      return name;
+   public String getUsername() {
+      return username;
    }
 
    // set del firstName
-   public void set_breedName(String name) {
-      this.name = name;
+   public void setUsername(String username) {
+      this.username = username;
+   }
+   public String getPassword() {
+      return password;
+   }
+   public void setPassword(String password) {
+      this.password = password;
    }
 
    public LocalDateTime get_registration_date() {
